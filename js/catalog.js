@@ -23,6 +23,8 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
+  event.preventDefault();
+  https://teamtreehouse.com/community/how-to-stop-javascript-window-reloading-when-each-time-button-is-on-a-page
 
   // Do all the things ...
   addSelectedItemToCart();
@@ -33,10 +35,14 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
+function addSelectedItemToCart(selectedItemAndQuantity) {
   // TODO: suss out the item picked from the select list
+  var item = target.item.value;
   // TODO: get the quantity
+  var quantity = target.item.value;
   // TODO: using those, add one item to the Cart
+  cart.addItem(item, quantity);
+
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
