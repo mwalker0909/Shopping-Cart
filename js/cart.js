@@ -20,20 +20,41 @@ function renderCart() {
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {}
+//https://www.w3schools.com/jsref/prop_node_childnodes.asp
+
+var table = document.getElementById('cart')
+var tBody = table.childNodes;
+
+
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
+var tBody = document.getElementsByTagName('tBody')[0];
 
   // TODO: Find the table body
+  var table = document.getElementById('cart');
+  for (var i = 0; i < cart.length; i++); {
+  var tableRow = document.createElement('tableRow');
+  var tableData = document.createElement('tableData');
+  table.appendChild(tableRow);
+  tableRow.appendChild(tableData.length);
+
+
+  
+
 
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
+  var deleteTd = document.createElement('td');
+  deleteTd.textContent = 'unknown';
+  tr.appendChild(deleteTd);
 
 }
 
 function removeItemFromCart(event) {
+  
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
