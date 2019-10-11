@@ -3,6 +3,8 @@
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById('cart');
+var tbody = table.querySelector('tbody'); // Credit to Conor McCue
+
 table.addEventListener('click', removeItemFromCart);
 var cart;
 
