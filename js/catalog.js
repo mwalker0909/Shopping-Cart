@@ -27,7 +27,7 @@ function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
   event.preventDefault();
-  https://teamtreehouse.com/community/how-to-stop-javascript-window-reloading-when-each-time-button-is-on-a-page
+  //https://teamtreehouse.com/community/how-to-stop-javascript-window-reloading-when-each-time-button-is-on-a-page
 
   // Do all the things ...
   addSelectedItemToCart();
@@ -56,6 +56,8 @@ function handleSubmit(event) {
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
+    var cartnumber = document.getElementById('itemCount');
+    cartnumber.innerText = cart.items.length; // taken from our code review and Conor's code. 
 // link by doing element id = // then set to zero. then for loop to iterate through length. then for the length we add to the overall count. 
 var itemCount = document.getElementById('itemCount');
 

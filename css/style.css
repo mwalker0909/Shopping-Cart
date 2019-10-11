@@ -1,1 +1,52 @@
-/* TODO: Make it awesome */
+
+body {
+  background-color: rgba(66, 66, 66, 0.589)
+}
+h1 {
+  color: yellow;
+  font-size: 45px;
+  margin-left: 36%;
+  margin-top: 55px;
+  
+}
+ul {
+  margin-left: 88%;
+  font-size: 35px;
+}
+
+#itemCount {
+  margin-left: 5px;
+  font-size:28px;
+  border: 1px solid rgba(75, 68, 68, 0.589); 
+
+}
+.copy {
+  margin-top: 35px;
+}
+
+#catalog {
+  margin-left: 28%;
+  color: rgb(20, 77, 110);
+  font-style: oblique, bold;
+  font-size:120%;
+}
+
+legend {
+  font-size: 190%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic, bold;
+  margin-left: 215px;
+  margin-bottom: 25px;
+}
+footer {
+  margin-top: 14%;
+  margin-left: 85%;
+}
+ol {
+  margin-left: 25%;
+  font-size: 18px;
+  color: greenyellow;
+  font-style: bold;
+  margin-top: 45px;
+}
+    

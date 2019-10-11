@@ -5,11 +5,12 @@
 var table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 var cart;
+// var tableBody = table.querySelector('tbody');
 
 function loadCart() {
   var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   cart = new Cart(cartItems);
-}
+}   
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
@@ -21,6 +22,8 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {}
 //https://www.w3schools.com/jsref/prop_node_childnodes.asp
+var tableRowNode = tableBody.querySelectorAll('tr');
+
 
 var table = document.getElementById('cart')
 var tBody = table.childNodes;
