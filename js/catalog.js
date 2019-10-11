@@ -10,9 +10,12 @@ var cart = new Cart([]);
 function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
-  var selectElement = document.getElementById('items');
+  var selectEl = document.getElementById('items');
   for (var i in Product.allProducts) {
-
+    var option = document.createElement('option');
+    option.setAttribute('class', 'products');
+    option.textContent = Product.allProducts[i].name;
+    selectEl.appendChild(option);
   }
 
 }
@@ -34,20 +37,36 @@ function handleSubmit(event) {
 
 }
 
-// TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
+  // TODO: Add the selected item and quantity to the cart
+  function addSelectedItemToCart() {
+
   // TODO: suss out the item picked from the select list
-  var item = target.item.value;
+
+  var productDropDown = document.getElementById('items');
+  var product = productDropDown.value;
   // TODO: get the quantity
-  var quantity = target.item.value;
+
+  var quantityInput = document.getElementById('quantity');
+  var quantity = quantityInput.value;
+ 
   // TODO: using those, add one item to the Cart
-  cart.addItem(item, quantity);                           // DOES CART NEED TO BE CAPS OR LOWER CASE? //
+  cart.addItem(product, quantity);                           
 
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
-var itemCount = // link by doing eleemtn id = // then set to zero. then for loop to iterate through length. then for the length we add.
+function updateCounter() {
+// link by doing element id = // then set to zero. then for loop to iterate through length. then for the length we add to the overall count. 
+var itemCount = document.getElementById('itemCount');
+
+var currentCount = 0
+// set the total number to zero first, then iterate through to get actual number. 
+for (var i = 0; i < cartItems.length; i++) {
+    currentCount = parseInt(cartItems[i].length);
+}
+itemCount.textContent = currentCount;
+}
+
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
