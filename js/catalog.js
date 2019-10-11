@@ -72,6 +72,12 @@ itemCount.textContent = currentCount;
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  var formItem = document.getElementById('items').value;
+  var formQuantity = document.getElementById('quantity').value;
+  var targetDiv = document.getElementById('cartContents');
+  var newText = document.createElement('p');
+  newText.innerText = `${formItem}: ${formQuantity}`;
+  targetDiv.appendChild(newText);
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }

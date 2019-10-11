@@ -5,12 +5,11 @@
 var table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 var cart;
-// var tableBody = table.querySelector('tbody');
 
 function loadCart() {
   var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   cart = new Cart(cartItems);
-}   
+}
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
@@ -20,19 +19,13 @@ function renderCart() {
 }
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
-//https://www.w3schools.com/jsref/prop_node_childnodes.asp
-var tableRowNode = tableBody.querySelectorAll('tr');
-
-
-var table = document.getElementById('cart')
-var tBody = table.childNodes;
-
-
+function clearCart() {
+  // var table = document.getElementById('cart');
+  // table.deleteRow();
+}
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
-
 
   // TODO: Find the table body
   var tbody = document.querySelector('tbody');
@@ -54,24 +47,16 @@ function showCart() {
     tr.appendChild(tdItem);
   }
 }
-  
 
 function removeItemFromCart(event) {
-  
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  // GIVING CREDIT TO TREVOR FOR THIS.I will verbally walk through the process here though
-  // we start with an if statement to validate the clicked link. if this event happens, then remove parentElement.id 
-  // deleting a parent element either deletes the parent or null. https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement
-  if(event.target.textContent === 'X') {
-    cart.removeItem(event.target.parentElement.id);
-  }
+  cart.removeItem(event.target);
   // TODO: Save the cart back to local storage
-  localStorage.setItem('cart', JSON.stringify(cart.items));
+  cart.saveToLocalStorage();
   // TODO: Re-draw the cart table
   renderCart();
-
+}
 
 // This will initialize the page and draw the cart on screen
 renderCart();
-};

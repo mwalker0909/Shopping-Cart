@@ -10,23 +10,24 @@ Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
   var newItem = new CartItem(product, quantity);
   this.items.push(newItem);
-  // new Cart(newItem);
-  console.log(this.items);
-  
-
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
-  var saveLocalVar = JSON.stringify(Cart.items); // does this need to be a string? ""
-  localStorage.setItem('cartContent', saveLocalVar);
+  var arrString = JSON.stringify(this.items);
+  localStorage.setItem('cart-contents', arrString);
+};
+
+Cart.prototype.saveToLocalStorage = function() {
+  // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  var arrString = JSON.stringify(this.items);
+  localStorage.setItem('cart', arrString);
 };
 
 Cart.prototype.removeItem = function(item) {
-  this.item = item;
-  this.items.splice(item,1);
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+  this.items.splice(item, 1);
 };
 
 var CartItem = function(product, quantity) {
