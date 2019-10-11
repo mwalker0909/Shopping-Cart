@@ -152,4 +152,7 @@ $RECYCLE.BIN/
 *.lnk
 
 
+<<<<<<< HEAD
 # End of https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocodess
+=======
+>>>>>>> ca7e4ab7cf5b4b4605c81d7eac6b310e15d095c3
