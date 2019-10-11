@@ -11,15 +11,13 @@ function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select element for each product
   var selectElement = document.getElementById('items');
-  // for (var i in Product.allProducts) {
-  for (var i = 0; i < Product.allProducts.length; i++) {
-
+  for (var i in Product.allProducts) {
     var option = document.createElement('option');
     option.setAttribute('class', 'products');
-    option.textContent = `${Product.allImages[i][1]}`;
+    option.textContent = Product.allProducts[i].name;
+    console.log(option);
     selectElement.appendChild(option);
   }
-
 }
 
 // When someone submits the form, we need to add the selected item to the cart
@@ -28,6 +26,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
+  event.preventDefault();
 
   // Do all the things ...
   addSelectedItemToCart();
