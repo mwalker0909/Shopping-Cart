@@ -45,6 +45,8 @@ function addSelectedItemToCart() {
   var quantity = quantityInput.value;
   // TODO: using those, add one item to the Cart
   cart.addItem(product, quantity);
+  // From https://www.w3schools.com/jsref/met_form_reset.asp
+  document.getElementById('catalog').reset();
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
