@@ -8,14 +8,12 @@ var cart = new Cart([]);
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
-
-  //TODO: Add an <option> tag inside the form's select element for each product
-  var selectEl = document.getElementById('items');
+  var productDropDown = document.getElementById('items');
   for (var i in Product.allProducts) {
     var option = document.createElement('option');
     option.setAttribute('class', 'products');
     option.textContent = Product.allProducts[i].name;
-    selectEl.appendChild(option);
+    productDropDown.appendChild(option);
   }
 }
 
@@ -23,39 +21,37 @@ function populateForm() {
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
-
-  // TODO: Prevent the page from reloading
   event.preventDefault();
-
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
-
 }
 
-// TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
   var productDropDown = document.getElementById('items');
   var product = productDropDown.value;
-  // TODO: get the quantity
   var quantityInput = document.getElementById('quantity');
   var quantity = quantityInput.value;
-  // TODO: using those, add one item to the Cart
   cart.addItem(product, quantity);
-  // From https://www.w3schools.com/jsref/met_form_reset.asp
-  document.getElementById('catalog').reset();
 }
 
-// TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+  // Mason figured this one out
+}
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
-  // TODO: Get the item and quantity from the form
-  // TODO: Add a new element to the cartContents div with that information
+  // Credit: mashup of Conor McCue's and Trevor Thompson's solutions
+  var productDropDown = document.getElementById('items');
+  var product = productDropDown.options[productDropDown.selectedIndex].value;
+  var quantity = document.getElementById('quantity').value;
+  var previewArea = document.getElementById('cartContents');
+  var previewText = document.createElement('p');
+  previewText.innerHTML = `${product} x${quantity}`;
+  previewArea.appendChild(previewText);
+  // Holly found at https://www.w3schools.com/jsref/met_form_reset.asp
+  document.getElementById('catalog').reset();
 }
 
 // Set up the "submit" event listener on the form.

@@ -3,8 +3,6 @@
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById('cart');
-var tbody = table.querySelector('tbody'); // Credit to Conor McCue
-
 table.addEventListener('click', removeItemFromCart);
 var cart;
 
@@ -20,29 +18,25 @@ function renderCart() {
   showCart();
 }
 
-// TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-  // var table = document.getElementById('cart');
-  // table.deleteRow();
+  // Credit to Trevor Thompson
+  while (table.rows.length > 0) {
+    table.deleteRow(0);
+  }
 }
 
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
-
-  // TODO: Find the table body
   var tbody = document.querySelector('tbody');
-  // TODO: Iterate over the items in the cart
   for (var i = 0; i < cart.items.length; i++) {
-    // TODO: Create a TR
     var tr = document.createElement('tr');
-    // TODO: Create a TD for the delete link, quantity,  and the item
+    tr.setAttribute('id', i); // credit Trevor Thompson
     var tdRemove = document.createElement('td');
-    tdRemove.textContent = 'X'; //placeholder
+    tdRemove.setAttribute('class', 'remove'); // credit Trevor Thompson
+    tdRemove.textContent = 'X';
     var tdQuanity = document.createElement('td');
-    tdQuanity.textContent = cart.items[i].quantity; //placeholder
+    tdQuanity.textContent = cart.items[i].quantity;
     var tdItem = document.createElement('td');
-    tdItem.textContent = cart.items[i].product; //placeholder
-    // TODO: Add the TR to the TBODY and each of the TD's to the TR
+    tdItem.textContent = cart.items[i].product;
     tbody.appendChild(tr);
     tr.appendChild(tdRemove);
     tr.appendChild(tdQuanity);
@@ -51,13 +45,12 @@ function showCart() {
 }
 
 function removeItemFromCart(event) {
-
-  // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  cart.removeItem(event.target);
-  // TODO: Save the cart back to local storage
-  cart.saveToLocalStorage();
-  // TODO: Re-draw the cart table
-  renderCart();
+  // Credit to Trevor Thompson and Conor McCue
+  if(event.target.textContent === 'X'){
+    cart.removeItem(event.target.parentElement);
+    localStorage.setItem('cart', JSON.stringify(cart.items));
+    renderCart();
+  }
 }
 
 // This will initialize the page and draw the cart on screen
