@@ -8,12 +8,12 @@ var cart = new Cart([]);
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
-  var productDropDown = document.getElementById('items');
+  var productList = document.getElementById('items');
   for (var i in Product.allProducts) {
     var option = document.createElement('option');
     option.setAttribute('class', 'products');
     option.textContent = Product.allProducts[i].name;
-    productDropDown.appendChild(option);
+    productList.appendChild(option);
   }
 }
 
@@ -30,27 +30,28 @@ function handleSubmit(event) {
 }
 
 function addSelectedItemToCart() {
-  var productDropDown = document.getElementById('items');
-  var product = productDropDown.value;
+  var productList = document.getElementById('items');
+  var product = productList.value;
   var quantityInput = document.getElementById('quantity');
   var quantity = quantityInput.value;
   cart.addItem(product, quantity);
 }
 
 function updateCounter() {
-  // Mason figured this one out
+  var counter = document.getElementById('itemCount');
+  counter.textContent = cart.items.length;
 }
 
 function updateCartPreview() {
   // Credit: mashup of Conor McCue's and Trevor Thompson's solutions
-  var productDropDown = document.getElementById('items');
-  var product = productDropDown.options[productDropDown.selectedIndex].value;
+  var productList = document.getElementById('items');
+  var product = productList.options[productList.selectedIndex].value;
   var quantity = document.getElementById('quantity').value;
   var previewArea = document.getElementById('cartContents');
   var previewText = document.createElement('p');
   previewText.innerHTML = `${product} x${quantity}`;
   previewArea.appendChild(previewText);
-  // Holly found at https://www.w3schools.com/jsref/met_form_reset.asp
+  // From the lab instructions: When the order is submitted, all of the input fields should be cleared. Holly found how to do this at https://www.w3schools.com/jsref/met_form_reset.asp
   document.getElementById('catalog').reset();
 }
 
