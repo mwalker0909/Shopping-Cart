@@ -2,7 +2,6 @@
 
 body {
   background-color: rgba(66, 66, 66, 0.589);
-  
 }
 h1 {
   color: yellow;
@@ -77,4 +76,20 @@ ul > li {
 
 .cartpic {
   width: 50px;
+}
+
+#fieldset {
+  text-align: right;
+  margin-top: 3%;
+  margin-right: 35%;
+}
+
+#fieldset > label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#cartlegend {
+  font-family: serif;
+  font-size: 1.7em;
 }

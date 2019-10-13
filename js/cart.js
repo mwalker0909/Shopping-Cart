@@ -76,5 +76,72 @@ function removeItemFromCart(event) {
   renderCart();
 }
 
+function renderCheckoutForm () {
+  var main = document.querySelector('main');
+  var section = document.createElement('section');
+  section.setAttribute('id', 'checkout-form');
+  var form = document.createElement('form');
+  form.setAttribute('id', 'form');
+  var fieldset = document.createElement('fieldset');
+  fieldset.setAttribute('id', 'fieldset');
+  var legend = document.createElement('legend');
+  legend.setAttribute('id', 'cartlegend');
+  legend.textContent = 'Order Form';
+  var labelName = document.createElement('label');
+  labelName.textContent = 'Name: ';
+  var inputName = document.createElement('input');
+  inputName.setAttribute('type', 'text');
+  var labelStreet = document.createElement('label');
+  labelStreet.textContent = 'Street: ';
+  var inputStreet = document.createElement('input');
+  inputStreet.setAttribute('type', 'text');
+  var labelCity = document.createElement('label');
+  labelCity.textContent = 'City: ';
+  var inputCity = document.createElement('input');
+  inputCity.setAttribute('type', 'text');
+  var labelState = document.createElement('label');
+  labelState.textContent = 'State: ';
+  var inputState = document.createElement('input');
+  inputState.setAttribute('type', 'text');
+  var labelZip = document.createElement('label');
+  labelZip.textContent = 'Zip: ';
+  var inputZip = document.createElement('input');
+  inputZip.setAttribute('type', 'number');
+  var labelPhone = document.createElement('label');
+  labelPhone.textContent = 'Phone: ';
+  var inputPhone = document.createElement('input');
+  inputPhone.setAttribute('type', 'text');
+  var labelCard = document.createElement('label');
+  labelCard.textContent = 'Card Number: ';
+  var inputCard = document.createElement('input');
+  inputCard.setAttribute('type', 'number');
+  var labelSubmit = document.createElement('label');
+  labelSubmit.textContent = 'Card Number: ';
+  var inputSubmit = document.createElement('input');
+  inputSubmit.setAttribute('type', 'submit');
+  inputSubmit.setAttribute('value', 'Process Order'); // https://stackoverflow.com/questions/14007613/change-text-from-submit-on-input-tag
+  main.appendChild(section);
+  section.appendChild(form);
+  form.appendChild(fieldset);
+  fieldset.appendChild(legend);
+  fieldset.appendChild(labelName);
+  labelName.appendChild(inputName);
+  fieldset.appendChild(labelStreet);
+  labelStreet.appendChild(inputStreet);
+  fieldset.appendChild(labelCity);
+  labelCity.appendChild(inputCity);
+  fieldset.appendChild(labelState);
+  labelState.appendChild(inputState);
+  fieldset.appendChild(labelZip);
+  labelZip.appendChild(inputZip);
+  fieldset.appendChild(labelPhone);
+  labelPhone.appendChild(inputPhone);
+  fieldset.appendChild(labelCard);
+  labelCard.appendChild(inputCard);
+  fieldset.appendChild(inputSubmit);
+}
+
 // This will initialize the page and draw the cart on screen
 renderCart();
+renderCheckoutForm();
+
