@@ -1,3 +1,5 @@
+/* Mason's CSS */
+
 body {
   background-color: rgba(66, 66, 66, 0.589);
   
@@ -17,7 +19,7 @@ ul {
 #itemCount {
   margin-left: 5px;
   font-size:28px;
-  /* border: 1px solid rgba(75, 68, 68, 0.589);  */
+  border: 1px solid rgba(75, 68, 68, 0.589); 
 
 }
 .copy {
@@ -66,6 +68,13 @@ li {
   font-size: 24px;
 }
 
+
+/* Holly's CSS */
+
 ul > li {
   display: inline;
+}
+
+.cartpic {
+  width: 50px;
 }

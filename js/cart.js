@@ -1,7 +1,12 @@
 /* global Cart */
 'use strict';
 
-
+// Adds a 4th column header for pics
+var thead = document.querySelector('thead');
+var trthead = thead.firstElementChild; // From https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
+var thPreview = document.createElement('th');
+thPreview.textContent = 'Preview';
+trthead.appendChild(thPreview);
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById('cart');
@@ -23,20 +28,12 @@ function renderCart() {
 }
 
 function clearCart() {
-  // Credit: Trevor Thompson/Natalie Alway
-  while(table.rows.length > 1){
-    table.deleteRow(0);
+  for (var i = 1; i < table.rows.length; i++) {
+    table.deleteRow(i);
   }
 }
 
-
 function showCart() {
-  // Adds a 4th column header for pics
-  var thead = document.querySelector('thead');
-  var trthead = thead.firstElementChild; // From https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
-  var thPreview = document.createElement('th');
-  thPreview.textContent = 'Preview';
-  trthead.appendChild(thPreview);
   // Creates table rows and data to show cart items
   var tbody = document.querySelector('tbody');
   for (var i = 0; i < cart.items.length; i++) {
@@ -59,22 +56,17 @@ function showCart() {
 
     var tdPic = document.createElement('td');
     var img = document.createElement('img');
+    img.setAttribute('class', 'cartpic');
     tr.appendChild(tdPic);
     tdPic.appendChild(img);
     // // Credit: Trevor Thompson/Natalie Alway
-    // for (var j = 0; j < Product.allProducts.length; j++) {
-    //   if (Product.allProducts[j].name.toUpperCase() === cart.items[i].product.toUpperCase()) {
-    //   img.src = Product.allProducts[j].filePath;
+    for (var j = 0; j < Product.allProducts.length; j++) {
+      if (Product.allProducts[j].name.toUpperCase() === cart.items[i].product.toUpperCase()) {
+        img.src = Product.allProducts[j].filePath;
+      }
+    }
   }
 }
-
-// var productTd = document.createElement('td');
-//    var img = document.createElement('img');
-//    productTd.textContent = cart.items[i].product;
-//    for (var j = 0; j < Product.allProducts.length; j++) {
-//      if (Product.allProducts[j].name.toUpperCase() === cart.items[i].product.toUpperCase()) {
-//        img.src = Product.allProducts[j].filePath;
-//      };
 
 function removeItemFromCart(event) {
   if (event.target.textContent === 'X') {

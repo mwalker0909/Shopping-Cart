@@ -18,7 +18,9 @@ Cart.prototype.saveToLocalStorage = function() {
 
 Cart.prototype.removeItem = function(item) {
   // Credit: Trevor Thompson/Natalie Alway
-  this.items.splice(item, 1); // <<< I think there's a problem here where it always removes the first item
+  for (var i = 0; i < this.items.length; i++) {
+    this.items.splice(item, i);
+  }
 };
 
 var CartItem = function(product, quantity) {
