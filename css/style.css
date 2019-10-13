@@ -1,7 +1,9 @@
+
 /* Mason's CSS */
 
 body {
   background-color: rgba(66, 66, 66, 0.589);
+
 }
 h1 {
   color: yellow;
@@ -40,9 +42,9 @@ legend {
   margin-bottom: 25px;
 }
 footer {
+
   margin-top: 13%;
   margin-left: 85%;
-
 }
 ol {
   margin-left: 25%;
@@ -51,6 +53,7 @@ ol {
   font-style: bold;
   margin-top: 45px;
 }
+
 
 #cart {
   margin-left: 35%;

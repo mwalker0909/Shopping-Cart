@@ -7,20 +7,25 @@ var Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
+
   var newItem = new CartItem(product, quantity);
   this.items.push(newItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
+
+
   var arrString = JSON.stringify(this.items);
   localStorage.setItem('cart', arrString);
 };
 
 Cart.prototype.removeItem = function(item) {
+
   // Credit: Trevor Thompson/Natalie Alway
   for (var i = 0; i < this.items.length; i++) {
     this.items.splice(item, i);
   }
+
 };
 
 var CartItem = function(product, quantity) {

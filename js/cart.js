@@ -27,6 +27,7 @@ function renderCart() {
   showCart();
 }
 
+
 function clearCart() {
   for (var i = 1; i < table.rows.length; i++) {
     table.deleteRow(i);
@@ -40,6 +41,7 @@ function showCart() {
     var tr = document.createElement('tr');
     tr.setAttribute('id', i); // Credit: Trevor Thompson/Natalie Alway
     tbody.appendChild(tr);
+
 
     var tdRemove = document.createElement('td');
     tdRemove.setAttribute('class', 'remove'); // Credit: Trevor Thompson/Natalie Alway
@@ -65,6 +67,7 @@ function showCart() {
         img.src = Product.allProducts[j].filePath;
       }
     }
+
   }
 }
 
@@ -75,6 +78,7 @@ function removeItemFromCart(event) {
   localStorage.setItem('cart', JSON.stringify(cart.items));
   renderCart();
 }
+
 
 function renderCheckoutForm () {
   var main = document.querySelector('main');
@@ -139,6 +143,7 @@ function renderCheckoutForm () {
   fieldset.appendChild(labelCard);
   labelCard.appendChild(inputCard);
   fieldset.appendChild(inputSubmit);
+
 }
 
 // This will initialize the page and draw the cart on screen
