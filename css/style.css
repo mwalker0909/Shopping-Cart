@@ -1,6 +1,9 @@
 
+/* Mason's CSS */
+
 body {
-  background-color: rgba(66, 66, 66, 0.589)
+  background-color: rgba(66, 66, 66, 0.589);
+
 }
 h1 {
   color: yellow;
@@ -39,7 +42,8 @@ legend {
   margin-bottom: 25px;
 }
 footer {
-  margin-top: 14%;
+
+  margin-top: 13%;
   margin-left: 85%;
 }
 ol {
@@ -49,4 +53,46 @@ ol {
   font-style: bold;
   margin-top: 45px;
 }
-    
+
+
+#cart {
+  margin-left: 35%;
+  margin-top: 30px;
+}
+
+th {
+  font-size: 28px;
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+li {
+  font-size: 24px;
+}
+
+
+/* Holly's CSS */
+
+ul > li {
+  display: inline;
+}
+
+.cartpic {
+  width: 50px;
+}
+
+#fieldset {
+  text-align: right;
+  margin-top: 3%;
+  margin-right: 35%;
+}
+
+#fieldset > label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#cartlegend {
+  font-family: serif;
+  font-size: 1.7em;
+}
