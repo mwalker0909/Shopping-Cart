@@ -1,6 +1,6 @@
 ### Code 201 BusMall Shopping Cart
 
-_A shopping page and associated cart page for BusMall (like SkyMall but for Busses). Related to our BusMall market research project, but stands as its own site for now._
+_A shopping page and associated cart page for BusMall (like SkyMall but for busses). Related to our BusMall market research project, but stands as its own site for now._
 
 Mason and Holly Pair Programming
 
