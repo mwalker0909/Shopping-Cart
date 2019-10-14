@@ -149,4 +149,3 @@ function renderCheckoutForm () {
 // This will initialize the page and draw the cart on screen
 renderCart();
 renderCheckoutForm();
-
