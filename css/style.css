@@ -40,7 +40,7 @@ legend {
   margin-bottom: 25px;
 }
 footer {
-  margin-top: 13%;
+  margin-top: 18%;
   margin-left: 85%;
 
 }
@@ -65,4 +65,16 @@ th {
 
 li {
   font-size: 24px;
+}
+
+#cartContents {
+  color: blueviolet;
+  font-size: 28px;
+  margin-top: 25px;
+  margin-left: 45%;
+}
+
+#fieldset {
+  margin-top: 90px;
+  margin-left: 5%;
 }
