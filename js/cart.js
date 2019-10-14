@@ -33,6 +33,7 @@ function showCart() {
   for (var i = 0; i < cart.items.length; i++) {
     // TODO: Create a TR
     var tr = document.createElement('tr');
+    tr.setAttribute('id', i);
     // TODO: Create a TD for the delete link, quantity,  and the item
     var tdRemove = document.createElement('td');
     tdRemove.textContent = 'X'; //placeholder
